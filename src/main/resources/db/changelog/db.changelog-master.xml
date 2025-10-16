@@ -4,30 +4,10 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd">
 
-    <changeSet id="1" author="andres">
-        <createTable tableName="products">
-            <column name="id" type="BIGINT" autoIncrement="true">
-                <constraints primaryKey="true" nullable="false"/>
-            </column>
-            <column name="name" type="VARCHAR(255)">
-                <constraints nullable="false"/>
-            </column>
-            <column name="description" type="VARCHAR(255)"/>
-            <column name="price" type="BIGINT"/>
-        </createTable>
-    </changeSet>
+       <!-- Crear la tabla products -->
+    <include file="db/changelog/db.changelog-1.0-create-table-products.xml" relativeToChangelogFile="false"/>
 
-    <changeSet id="2" author="andres">
-        <insert tableName="products">
-            <column name="name" value="Monitor"/>
-            <column name="description" value="Monitor 24 pulgadas"/>
-            <column name="price" valueNumeric="120"/>
-        </insert>
-        <insert tableName="products">
-            <column name="name" value="Teclado"/>
-            <column name="description" value="Teclado mecánico"/>
-            <column name="price" valueNumeric="80"/>
-        </insert>
-    </changeSet>
+    <!-- Insertar registros iniciales -->
+    <include file="db/changelog/db.changelog-1.1-insert-products.xml" relativeToChangelogFile="false"/>
 
 </databaseChangeLog>

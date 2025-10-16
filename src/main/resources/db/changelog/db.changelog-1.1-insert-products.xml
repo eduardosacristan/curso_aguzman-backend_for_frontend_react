@@ -1,0 +1,20 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+        http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.24.xsd">
+
+    <changeSet id="2" author="andres">
+        <insert tableName="products">
+            <column name="name" value="Monitor"/>
+            <column name="description" value="Monitor 24 pulgadas"/>
+            <column name="price" valueNumeric="120"/>
+        </insert>
+        <insert tableName="products">
+            <column name="name" value="Teclado"/>
+            <column name="description" value="Teclado mecánico"/>
+            <column name="price" valueNumeric="80"/>
+        </insert>
+    </changeSet>
+
+</databaseChangeLog>
